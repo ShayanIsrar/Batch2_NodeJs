@@ -1,0 +1,26 @@
+{
+  "name": "batch2_nodejs",
+  "version": "1.0.0",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "start": "node index.js",
+    "dev": "nodemon index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ShayanIsrar/Batch2_NodeJs.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ShayanIsrar/Batch2_NodeJs/issues"
+  },
+  "homepage": "https://github.com/ShayanIsrar/Batch2_NodeJs#readme",
+  "description": "",
+  "dependencies": {
+    "express": "^5.1.0",
+    "nodemon": "^3.1.10"
+  }
+}
