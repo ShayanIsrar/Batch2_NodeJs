@@ -1,13 +1,18 @@
-// const express = require("express");
+// app.js
 import express from "express";
+import dotenv from "dotenv";
+import { connectDB } from "./config/db.js";
+import userRoutes from "./routes/userRoutes.js";
 
-const backend = express();
-const port = 3000;
+dotenv.config();
+connectDB();
 
-backend.get("/", (req, res) => {
-  res.send("This is shayan");
-});
+const app = express();
+app.use(express.json());
 
-backend.listen(port, () => {
-  console.log(`This Server is running on http://localhost:${port}`);
+app.use("/api/users", userRoutes);
+
+const PORT = process.env.PORT || 5000;
+app.listen(PORT, () => {
+  console.log(`🚀 Server running on http://localhost:${PORT}`);
 });
