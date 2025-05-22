@@ -7,11 +7,14 @@ import {
   deleteUser,
 } from "../controllers/userController.js";
 
+// import checkRequest from "../middleware/checkRequest.js"; // 👈 import middleware
+
 const router = express.Router();
 
-router.get("/get", getAllUsers); // GET all
-router.post("/insert", createUser); // POST create
-router.put("/:id", updateUser); // PUT update by id
-router.delete("/:id", deleteUser); // DELETE by id
+// ✅ Apply middleware LOCALLY per route
+router.get("/getusers", getAllUsers);
+router.post("/createuser", createUser);
+router.put("/:id", updateUser);
+router.delete("/:id", deleteUser);
 
 export default router;
