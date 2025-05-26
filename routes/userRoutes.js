@@ -12,8 +12,8 @@ import {
 const router = express.Router();
 
 // ✅ Apply middleware LOCALLY per route
-router.get("/", getAllUsers);
-router.post("/", createUser);
+router.get("/get", getAllUsers);
+router.post("/create", createUser);
 router.put("/:id", updateUser);
 router.delete("/:id", deleteUser);
 

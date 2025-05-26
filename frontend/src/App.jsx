@@ -1,16 +1,20 @@
-// src/App.jsx
 import React from "react";
-import UserForm from "./components/UserForm";
-import UserList from "./components/UserList";
 
-const App = () => {
+import { Routes, Route } from "react-router-dom";
+import Sidebar from "./components/Sidebar";
+import CreateUser from "./pages/CreateUser";
+import UserList from "./pages/UserList";
+
+export default function App() {
   return (
-    <div className="min-h-screen bg-gray-100 p-6">
-      <h1 className="text-3xl font-bold text-center mb-6">User Management</h1>
-      <UserForm />
-      <UserList />
+    <div className="flex min-h-screen bg-gray-100">
+      <Sidebar />
+      <div className="flex-1 p-6">
+        <Routes>
+          <Route path="/form" element={<CreateUser />} />
+          <Route path="/users" element={<UserList />} />
+        </Routes>
+      </div>
     </div>
   );
-};
-
-export default App;
+}
